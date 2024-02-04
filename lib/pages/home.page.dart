@@ -1,3 +1,4 @@
+import 'package:discord_bot_manager/configs/theme.config.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,8 +12,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-      title: const Text('Discord Bot Manager'),
-    ));
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: const Text('Discord Bot Manager'),
+      ),
+      body: TextButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/login');
+        },
+        child: const Text('Login'),
+      ),
+    );
   }
 }

@@ -1,7 +1,10 @@
 import 'package:discord_bot_manager/pages/home.page.dart';
+import 'package:discord_bot_manager/pages/login.page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: '.env');
   runApp(const MyApp());
 }
 
@@ -20,6 +23,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const HomePage(),
+          '/login': (context) => const LoginPage(),
         });
   }
 }
